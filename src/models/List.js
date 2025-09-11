@@ -7,6 +7,7 @@ const listSchema = new mongoose.Schema({
     quantity: { type: Number, default: 1 },
     status: { type: String, enum: ["pending", "completed"], default: "pending" },
   }],
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
 }, { versionKey: false});
 
 const List = mongoose.model("List", listSchema);
